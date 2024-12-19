@@ -18,7 +18,7 @@
                         </tr>
                         <tr>
                             <td v-for="player in players" :key="player.id">
-                                <router-link :to="{ name: 'Player', params: {nickname: player.nickname}}">
+                                <router-link :to="{ name: 'Player', params: {nickname: player.nickname, name_eng: player.name_eng}}">
                                     <div class="player_img">
                                         <img :src="player.img_url" :alt="player.nickname">
                                     </div>

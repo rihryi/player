@@ -1,39 +1,25 @@
 <template>
     <div>
-        <div v-if="loading">
-            <div class="loading">
-                <i class="fa-solid fa-spinner"></i>
-                <p>Loading...</p>
-            </div>
-        </div>
-        <div v-if="error">{{ error }}</div>
-        <div v-else>
-            <div class="front_wrap" v-if="player">
+        <div>
+            <div class="front_wrap">
                 <div class="player_info">
                     <div class="player_left">
-                        <div class="player_img">
-                            <img :src="player.img_url" :alt="player.nickname">
-                        </div>
+                        <div class="player_img"></div> <!-- 이미지 태그 -->
                         <div class="player_txt">
-                            <h1>{{ player.nickname }}</h1>
+                            <h1>chovy</h1>
                             <div class="name">
-                                <p class="left-p"><b>name</b>{{ player.name }}</p>
-                                <p>{{ name_eng }}</p>
+                                <p class="left-p"><b>name</b>정지훈</p>
+                                <p>jung ji hoon</p>
                             </div>
                             <div class="team">
-                                <p class="left-p"><b>team</b>{{ player.team }}</p>
-                                <p><b>position</b>{{ player.position }}</p>
+                                <p class="left-p"><b>team</b>gen.g</p>
+                                <p><b>position</b>mid</p>
                             </div>
                         </div>
                     </div>
-                    <div class="team" v-if="teamImg">
-                        <div class="team_img">
-                            <img :src="teamImg.team_img" alt="teamImg.team_name">
-                        </div>
-                    </div>
+                    <div class="team_img"></div> <!-- 이미지 태그 -->
                 </div>
-                
-                <div class="player_stat" v-if="stats.length > 0">
+                <div class="player_stat">
                     <h3 class="title_h3">대회 별 경기 전적</h3>
                     <table>
                         <thead>
@@ -49,21 +35,61 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr v-for="(stat, index) in stats" :key="index">
-                                <td>{{ stat.tournament }}</td>
-                                <td>{{ stat.team }}</td>
-                                <td>{{ stat.position }}</td>
-                                <td>{{ stat.gamesPlayed }}</td>
-                                <td>{{ stat.winRate }}</td>
-                                <td>{{ stat.kda }}</td>
-                                <td>{{ stat.killParticipation }}</td>
-                                <td>{{ stat.csPerMin }}</td>
+                            <tr>
+                                <td>KeSPA Cup 2024</td>
+                                <td>Gen.G</td>
+                                <td>Middle</td>
+                                <td>12</td>
+                                <td>100%</td>
+                                <td>19.0</td>
+                                <td>95.0%</td>
+                                <td>7.9</td>
+                            </tr>
+                            <tr>
+                                <td>KeSPA Cup 2024</td>
+                                <td>Gen.G</td>
+                                <td>Middle</td>
+                                <td>12</td>
+                                <td>100%</td>
+                                <td>19.0</td>
+                                <td>95.0%</td>
+                                <td>7.9</td>
+                            </tr>
+                            <tr>
+                                <td>KeSPA Cup 2024</td>
+                                <td>Gen.G</td>
+                                <td>Middle</td>
+                                <td>12</td>
+                                <td>100%</td>
+                                <td>19.0</td>
+                                <td>95.0%</td>
+                                <td>7.9</td>
+                            </tr>
+                            <tr>
+                                <td>KeSPA Cup 2024</td>
+                                <td>Gen.G</td>
+                                <td>Middle</td>
+                                <td>12</td>
+                                <td>100%</td>
+                                <td>19.0</td>
+                                <td>95.0%</td>
+                                <td>7.9</td>
+                            </tr>
+                            <tr>
+                                <td>KeSPA Cup 2024</td>
+                                <td>Gen.G</td>
+                                <td>Middle</td>
+                                <td>12</td>
+                                <td>100%</td>
+                                <td>19.0</td>
+                                <td>95.0%</td>
+                                <td>7.9</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
-                
-                <div class="most_champions" v-if="mosts.length > 0">
+                <!-- most champion 3가지-->
+                <div class="most_champions">
                     <h3 class="title_h3">모스트 챔피언</h3>
                     <table>
                         <thead>
@@ -77,70 +103,88 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr v-for="(most, index) in mosts" :key="index">
+                            <tr>
                                 <td class="most_img">
-                                    <img :src="most.img_url" alt="most.champion_name" class="most_champion_img">
-                                    <p>{{ most.champion_name }}</p>
+                                    <div class="most_champion_img"></div>
+                                    <p>Azir</p>
                                 </td>
-                                <td>{{ most.position }}</td>
-                                <td>{{ most.gamesPlayed }}</td>
-                                <td>{{ most.winRate }}</td>
-                                <td>{{ most.kda }}</td>
-                                <td>{{ most.killParticipation }}</td>
+                                <td>middle</td>
+                                <td>88</td>
+                                <td>69%</td>
+                                <td>4.4</td>
+                                <td>64.2%</td>
+                            </tr>
+                            <tr>
+                                <td class="most_img"> 
+                                    <div class="most_champion_img"></div>
+                                    <p>Azir</p>
+                                </td>
+                                <td>middle</td>
+                                <td>88</td>
+                                <td>69%</td>
+                                <td>4.4</td>
+                                <td>64.2%</td>
+                            </tr>
+                            <tr>
+                                <td class="most_img">
+                                    <div class="most_champion_img"></div>
+                                    <p>Azir</p>
+                                </td>
+                                <td>middle</td>
+                                <td>88</td>
+                                <td>69%</td>
+                                <td>4.4</td>
+                                <td>64.2%</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
 
                 <!-- 최근에 play한 champion 5가지 -->
-                 <div class="rececnt_games" v-if="recents.length > 0">
+                 <div class="rececnt_games">
                     <h3 class="title_h3">최근 경기 전적</h3>
-                    <div class="game" v-for="(game, index) in recents" :key="index">
+                    <div class="game">
                         <div class="game-header">
-                            <p :class="{ win: game.result.outcome == 'Win', lose: game.result.outcome == 'Loss' }">
-                                {{ game.result.outcome }}
-                            </p>
+                            <p>Loss</p>
                             <span>vs.</span>
-                            <div class="vs_img">
-                                <img :src="game.result.versusImage" alt="game.result.versusTeam">
-                            </div>
+                            <div class="vs_img"></div>
                         </div>
 
                         <div class="tourament_date">
-                            <p>{{ game.matchInfo.tournament }}</p>
-                            <p>{{ game.matchInfo.date }}</p>
+                            <p>Worlds 2024 Main Event</p>
+                            <p>2024. 10. 28.</p>
                         </div>
 
                         <div class="champion-info">
-                            <div class="champion_img">
-                                <img :src="game.championInfo.championImage" alt="game.championInfo.champion">
-                            </div>
-                            <p>{{ game.championInfo.kda }}</p>
+                            <!-- 플레이한 챔피언 이미지-->
+                            <div class="champion_img"></div>
+                            <p>3/1/5</p>
                         </div>
-                        
+
                         <div class="teams">
                             <div class="team">
-                                <p style="color: blue; font-weight: bold;">{{ game.teamInfo.myTeam.name }}</p>
+                                <p>Gen.G</p>
                                 <div class="composition">
-                                    <div v-for="(champ, champIndex) in game.teamInfo.myTeam.composition"
-                                        :key="champIndex" 
-                                        class="champion_img">
-                                        <img :src="champ.image" :alt="champ.champion">
-                                    </div>
+                                    <div class="champion_img"></div>
+                                    <div class="champion_img"></div>
+                                    <div class="champion_img"></div>
+                                    <div class="champion_img"></div>
+                                    <div class="champion_img"></div>
                                 </div>
                             </div>
                             <div class="team">
-                                <p style="color: red; font-weight: bold;">{{ game.teamInfo.enemyTeam.name }}</p>
+                                <p>T1</p>
                                 <div class="composition">
-                                    <div v-for="(champ, champIndex) in game.teamInfo.enemyTeam.composition"
-                                        :key="champIndex" 
-                                        class="champion_img">
-                                        <img :src="champ.image" :alt="champ.champion">
-                                    </div>
+                                    <div class="champion_img"></div>
+                                    <div class="champion_img"></div>
+                                    <div class="champion_img"></div>
+                                    <div class="champion_img"></div>
+                                    <div class="champion_img"></div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
                  </div>
             </div>
         </div>
@@ -148,73 +192,17 @@
 </template>
 
 <script>
-import axios from 'axios';
 
 export default {
     name: 'Player',
-    data() {
-        return {
-            nickname: '',
-            name_eng: '',
-            teamImg: null,
-            stats: [],
-            player: null,
-            mosts: [],
-            recents: [],
-            loading: true,
-            error: null
-        };
-    },
-    created() {
-        this.nickname = this.$route.params.nickname;
-        this.name_eng = this.$route.params.name_eng;
-        this.fetchPlayerData();
-    },
-    methods: {
-        async fetchPlayerData() {
-            try {
-                const response = await axios.get(`/api/player/info/${this.nickname}/${this.name_eng}`);
-                this.teamImg = response.data.teamImg;
-                this.player = response.data.player;
-                this.stats = response.data.stats;
-                this.mosts = response.data.most;
-                this.recents = response.data.recent;
-                this.loading = false;
-            } catch (error) {
-                this.error = 'Failed to fetch player data';
-                this.loading = false;
-                console.error('Error: ', error);
-            }
-        },
-    },
 }
 </script>
 
 <style scoped>
-.loading {
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-    font-size: 2rem;
-}
-
-.loading i {
-    font-size: 4rem;
-    margin-bottom: 2vw;
-    color: #3D3BF3;
-    animation: rotate_image 6s linear infinite;transform-origin: 50% 50%;
-}
-
-@keyframes rotate_image{
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
 .player_img {
+    height: 12vw;
     width: 10vw;
+    background-color: lemonchiffon;
 }
 
 .player_left {
@@ -255,25 +243,19 @@ export default {
 .vs_img {
     width: 4vw;
     height: 4vw;
+    background-color: lavender;
 }
 
 .team_img {
+    background-color: slateblue;
     width: 15vw;
     height: 15vw;
-    background-color: #C7C8CC;
-    border-radius: 6px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.team_img img {
-    width: 80%;
 }
 
 .most_champion_img {
-    height: 3vw;
-    width: 3vw;
+    height: 5vw;
+    width: 5vw;
+    background-color: skyblue;
 }
 
 .player_info {
@@ -287,6 +269,10 @@ export default {
     width: 100%;
 }
 
+.player_stat table {
+    width: 100%;
+}
+
 .player_stat table td:first-child {
     text-align: left;
     font-weight: bold;
@@ -297,7 +283,6 @@ export default {
     border: 1px solid #555;
     border-collapse : collapse;
     font-size: 0.9rem;
-    width: 100%;
 }
 
 .player_stat table th {
@@ -321,6 +306,7 @@ export default {
 .champion_img {
     height: 5vw;
     width: 5vw;
+    background-color: pink;
 }
 
 .most_champions {
@@ -366,23 +352,11 @@ export default {
     margin-left: 1vw;
 }
 
-
 .game {
     width: 100%;
     display: flex;
-    padding: 1vw 0;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid #ddd;
-}
-
-.game:first-child {
-    padding: 0;
-    padding-bottom: 1vw;
-}
-
-.game:last-child {
-    border: none;
 }
 
 .game .game-header {
@@ -447,14 +421,5 @@ export default {
     margin: 2vw 0 1vw;
 }
 
-.win {
-    font-weight: bold;
-    color: #3D3BF3;
-}
-
-.lose {
-    font-weight: bold;
-    color: #FB4141;
-}
 
 </style>

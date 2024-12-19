@@ -1,7 +1,9 @@
 <template>
-  <div class="wrap">
+  <div>
     <Header></Header>
-      <router-view></router-view>
+      <div class="wrap">
+        <router-view></router-view>
+      </div>
     <Footer></Footer>
   </div>
 </template>
@@ -20,9 +22,17 @@ export default {
 </script>
 
 <style>
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
 * {
   margin: 0;
   padding: 0;
+  font-family: 'Pretendard-Regular';
 }
 
 a {
@@ -38,6 +48,8 @@ li {
 }
 
 .wrap {
-  padding: 2vw;
+  padding: 0 10vw;
 }
+
+
 </style>
