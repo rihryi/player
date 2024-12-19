@@ -100,7 +100,41 @@ export default {
 
 <style scoped>
 .logo_img {
-    width: 5vw;
+    width: 7vw;
+}
+
+.team_list {
+    width: 100%;
+    margin-top: 3vw;
+}
+
+.team_list ul {
+    display: grid;
+    gap: 2vw;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-template-rows: repeat(2, 1fr);
+    text-align: center;
+    margin: 0 auto;
+}
+
+.team_list ul li {
+    color: #fff;
+    text-align: center;
+    background-color: #333;
+    width: 13vw;
+    height: 13vw;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.team_list ul li .logo_txt {
+    margin-top: 1vw;
+    font-size: 1.2rem;
 }
 </style>
 
